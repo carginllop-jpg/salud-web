@@ -1,7 +1,7 @@
 // Generado en el build. No editar.
-const VERSION = "c177bb743cb1";
+const VERSION = "1216109c8ffa";
 const CACHE = "salud-" + VERSION;
-const FILES = ["./","./assets/index-CAmw_ScL.js","./assets/index-DZYjKxiE.css","./manifest.webmanifest","./icons/icon-180.png","./icons/icon-192.png","./icons/icon-512.png","./icons/icon-maskable-512.png"];
+const FILES = ["./","./assets/index-CugJ1o7A.js","./assets/index-zpQMg-mq.css","./manifest.webmanifest","./icons/icon-180.png","./icons/icon-192.png","./icons/icon-512.png","./icons/icon-maskable-512.png"];
 
 self.addEventListener("install", (event) => {
   // cache: "reload" evita la caché HTTP: si no, podría guardarse un index.html anterior que apunta

@@ -1,7 +1,7 @@
 // Generado en el build. No editar.
-const VERSION = "3af266583a6d";
+const VERSION = "ad8197497160";
 const CACHE = "salud-" + VERSION;
-const FILES = ["./","./assets/index-BeV7gw8X.css","./assets/index-QX0eB3du.js","./manifest.webmanifest","./icons/icon-180.png","./icons/icon-192.png","./icons/icon-512.png","./icons/icon-maskable-512.png"];
+const FILES = ["./","./assets/index-CBSq6wK-.css","./assets/index-D5_0-eWW.js","./manifest.webmanifest","./icons/icon-180.png","./icons/icon-192.png","./icons/icon-512.png","./icons/icon-maskable-512.png"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(FILES)));

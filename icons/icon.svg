@@ -1,115 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
-  <defs>
-    <!-- Gradiente de Fondo Negro Lujoso -->
-    <radialGradient id="bg" cx="50%" cy="50%" r="65%">
-      <stop offset="0%" stop-color="#181a20"/>
-      <stop offset="60%" stop-color="#0a0b0e"/>
-      <stop offset="100%" stop-color="#040405"/>
-    </radialGradient>
-
-    <!-- Gradientes de Metal Cromo / Titanio -->
-    <linearGradient id="barMetal" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="18%" stop-color="#d1d5db"/>
-      <stop offset="50%" stop-color="#6b7280"/>
-      <stop offset="82%" stop-color="#374151"/>
-      <stop offset="100%" stop-color="#111827"/>
-    </linearGradient>
-
-    <linearGradient id="plateOuter" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#2b3038"/>
-      <stop offset="30%" stop-color="#555d6b"/>
-      <stop offset="50%" stop-color="#838da0"/>
-      <stop offset="70%" stop-color="#404652"/>
-      <stop offset="100%" stop-color="#1a1c22"/>
-    </linearGradient>
-
-    <linearGradient id="plateInner" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#1c1f25"/>
-      <stop offset="30%" stop-color="#3f4552"/>
-      <stop offset="50%" stop-color="#667082"/>
-      <stop offset="70%" stop-color="#30353f"/>
-      <stop offset="100%" stop-color="#121418"/>
-    </linearGradient>
-
-    <linearGradient id="rimSpec" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
-      <stop offset="50%" stop-color="#9ca3af" stop-opacity="0.2"/>
-      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.08"/>
-    </linearGradient>
-
-    <!-- Sombras y Resplandor 3D -->
-    <filter id="shadowDumbbell" x="-30%" y="-30%" width="160%" height="160%">
-      <feDropShadow dx="0" dy="26" stdDeviation="22" flood-color="#000000" flood-opacity="0.92"/>
-    </filter>
-
-    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="40"/>
-    </filter>
-  </defs>
-
-  <!-- FONDO NEGRO CON LUZ DE ESTUDIO -->
-  <rect width="1024" height="1024" fill="url(#bg)"/>
-
-  <!-- Halo de iluminación sutil trasera -->
-  <ellipse cx="512" cy="512" rx="360" ry="90" fill="#2c3445" opacity="0.22" filter="url(#softGlow)"/>
-
-  <!-- Sombra proyectada inferior -->
-  <ellipse cx="512" cy="710" rx="310" ry="22" fill="#000000" opacity="0.65" filter="url(#softGlow)"/>
-
-  <!-- ================= MANCUERNA EN HORIZONTAL ================= -->
-  <g filter="url(#shadowDumbbell)">
-
-    <!-- Barra metálica central horizontal -->
-    <rect x="210" y="492" width="604" height="40" rx="20" fill="url(#barMetal)"/>
-
-    <!-- Zona de agarre con textura diamantada antideslizante -->
-    <rect x="364" y="494" width="296" height="36" rx="6" fill="#242830"/>
-    <path d="
-      M380,494v36 M398,494v36 M416,494v36 M434,494v36 M452,494v36 M470,494v36
-      M488,494v36 M506,494v36 M524,494v36 M542,494v36 M560,494v36 M578,494v36
-      M596,494v36 M614,494v36 M632,494v36 M648,494v36
-    " stroke="#475161" stroke-width="2"/>
-
-    <!-- Reflejo superior especular de la barra -->
-    <rect x="214" y="493" width="596" height="5" rx="2.5" fill="#ffffff" opacity="0.8"/>
-
-    <!-- LADO IZQUIERDO -->
-    <!-- Collar interior -->
-    <rect x="330" y="476" width="22" height="72" rx="7" fill="url(#plateOuter)"/>
-    <rect x="331" y="477" width="20" height="4" rx="2" fill="#ffffff" opacity="0.8"/>
-
-    <!-- Disco Mediano Izquierdo -->
-    <rect x="272" y="382" width="50" height="260" rx="22" fill="url(#plateInner)"/>
-    <rect x="274" y="384" width="46" height="256" rx="20" fill="none" stroke="url(#rimSpec)" stroke-width="2.5"/>
-    <rect x="277" y="386" width="6" height="252" rx="3" fill="#ffffff" opacity="0.3"/>
-
-    <!-- Disco Grande Exterior Izquierdo -->
-    <rect x="210" y="342" width="56" height="340" rx="26" fill="url(#plateOuter)"/>
-    <rect x="212" y="344" width="52" height="336" rx="24" fill="none" stroke="url(#rimSpec)" stroke-width="3"/>
-    <rect x="215" y="348" width="8" height="328" rx="4" fill="#ffffff" opacity="0.4"/>
-
-    <!-- Extremo / Tuerca exterior izquierda -->
-    <rect x="186" y="490" width="22" height="44" rx="9" fill="url(#barMetal)"/>
-    <rect x="188" y="492" width="18" height="4" rx="2" fill="#ffffff" opacity="0.8"/>
-
-    <!-- LADO DERECHO (reflejo exacto del izquierdo; el original llegó cortado aquí) -->
-    <!-- Collar interior -->
-    <rect x="672" y="476" width="22" height="72" rx="7" fill="url(#plateOuter)"/>
-    <rect x="673" y="477" width="20" height="4" rx="2" fill="#ffffff" opacity="0.8"/>
-
-    <!-- Disco Mediano Derecho -->
-    <rect x="702" y="382" width="50" height="260" rx="22" fill="url(#plateInner)"/>
-    <rect x="704" y="384" width="46" height="256" rx="20" fill="none" stroke="url(#rimSpec)" stroke-width="2.5"/>
-    <rect x="707" y="386" width="6" height="252" rx="3" fill="#ffffff" opacity="0.3"/>
-
-    <!-- Disco Grande Exterior Derecho -->
-    <rect x="758" y="342" width="56" height="340" rx="26" fill="url(#plateOuter)"/>
-    <rect x="760" y="344" width="52" height="336" rx="24" fill="none" stroke="url(#rimSpec)" stroke-width="3"/>
-    <rect x="763" y="348" width="8" height="328" rx="4" fill="#ffffff" opacity="0.4"/>
-
-    <!-- Extremo / Tuerca exterior derecha -->
-    <rect x="816" y="490" width="22" height="44" rx="9" fill="url(#barMetal)"/>
-    <rect x="818" y="492" width="18" height="4" rx="2" fill="#ffffff" opacity="0.8"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Estilo del icono original: fondo negro, corona de puntos, aro blanco y punto rojo; ahora con una mancuerna recortada. -->
+  <rect width="512" height="512" fill="#000000"/>
+  <rect x="38" y="182" width="4" height="4" fill="#ffffff"/><rect x="38" y="206" width="4" height="4" fill="#ffffff"/><rect x="38" y="230" width="4" height="4" fill="#ffffff"/><rect x="38" y="254" width="4" height="4" fill="#ffffff"/><rect x="38" y="278" width="4" height="4" fill="#ffffff"/><rect x="38" y="302" width="4" height="4" fill="#ffffff"/><rect x="38" y="326" width="4" height="4" fill="#ffffff"/><rect x="62" y="134" width="4" height="4" fill="#ffffff"/><rect x="62" y="158" width="4" height="4" fill="#ffffff"/><rect x="62" y="182" width="4" height="4" fill="#ffffff"/><rect x="62" y="206" width="4" height="4" fill="#ffffff"/><rect x="62" y="230" width="4" height="4" fill="#ffffff"/><rect x="62" y="254" width="4" height="4" fill="#ffffff"/><rect x="62" y="278" width="4" height="4" fill="#ffffff"/><rect x="62" y="302" width="4" height="4" fill="#ffffff"/><rect x="62" y="326" width="4" height="4" fill="#ffffff"/><rect x="62" y="350" width="4" height="4" fill="#ffffff"/><rect x="62" y="374" width="4" height="4" fill="#ffffff"/><rect x="86" y="110" width="4" height="4" fill="#ffffff"/><rect x="86" y="134" width="4" height="4" fill="#ffffff"/><rect x="86" y="158" width="4" height="4" fill="#ffffff"/><rect x="86" y="350" width="4" height="4" fill="#ffffff"/><rect x="86" y="374" width="4" height="4" fill="#ffffff"/><rect x="86" y="398" width="4" height="4" fill="#ffffff"/><rect x="110" y="86" width="4" height="4" fill="#ffffff"/><rect x="110" y="110" width="4" height="4" fill="#ffffff"/><rect x="110" y="398" width="4" height="4" fill="#ffffff"/><rect x="110" y="422" width="4" height="4" fill="#ffffff"/><rect x="134" y="62" width="4" height="4" fill="#ffffff"/><rect x="134" y="86" width="4" height="4" fill="#ffffff"/><rect x="134" y="422" width="4" height="4" fill="#ffffff"/><rect x="134" y="446" width="4" height="4" fill="#ffffff"/><rect x="158" y="62" width="4" height="4" fill="#ffffff"/><rect x="158" y="86" width="4" height="4" fill="#ffffff"/><rect x="158" y="422" width="4" height="4" fill="#ffffff"/><rect x="158" y="446" width="4" height="4" fill="#ffffff"/><rect x="182" y="38" width="4" height="4" fill="#ffffff"/><rect x="182" y="62" width="4" height="4" fill="#ffffff"/><rect x="182" y="446" width="4" height="4" fill="#ffffff"/><rect x="182" y="470" width="4" height="4" fill="#ffffff"/><rect x="206" y="38" width="4" height="4" fill="#ffffff"/><rect x="206" y="62" width="4" height="4" fill="#ffffff"/><rect x="206" y="446" width="4" height="4" fill="#ffffff"/><rect x="206" y="470" width="4" height="4" fill="#ffffff"/><rect x="230" y="38" width="4" height="4" fill="#ffffff"/><rect x="230" y="62" width="4" height="4" fill="#ffffff"/><rect x="230" y="446" width="4" height="4" fill="#ffffff"/><rect x="230" y="470" width="4" height="4" fill="#ffffff"/><rect x="254" y="38" width="4" height="4" fill="#ffffff"/><rect x="254" y="62" width="4" height="4" fill="#ffffff"/><rect x="254" y="446" width="4" height="4" fill="#ffffff"/><rect x="254" y="470" width="4" height="4" fill="#ffffff"/><rect x="278" y="38" width="4" height="4" fill="#ffffff"/><rect x="278" y="62" width="4" height="4" fill="#ffffff"/><rect x="278" y="446" width="4" height="4" fill="#ffffff"/><rect x="278" y="470" width="4" height="4" fill="#ffffff"/><rect x="302" y="38" width="4" height="4" fill="#ffffff"/><rect x="302" y="62" width="4" height="4" fill="#ffffff"/><rect x="302" y="446" width="4" height="4" fill="#ffffff"/><rect x="302" y="470" width="4" height="4" fill="#ffffff"/><rect x="326" y="38" width="4" height="4" fill="#ffffff"/><rect x="326" y="62" width="4" height="4" fill="#ffffff"/><rect x="326" y="446" width="4" height="4" fill="#ffffff"/><rect x="326" y="470" width="4" height="4" fill="#ffffff"/><rect x="350" y="62" width="4" height="4" fill="#ffffff"/><rect x="350" y="86" width="4" height="4" fill="#ffffff"/><rect x="350" y="422" width="4" height="4" fill="#ffffff"/><rect x="350" y="446" width="4" height="4" fill="#ffffff"/><rect x="374" y="62" width="4" height="4" fill="#ffffff"/><rect x="374" y="86" width="4" height="4" fill="#ffffff"/><rect x="374" y="422" width="4" height="4" fill="#ffffff"/><rect x="374" y="446" width="4" height="4" fill="#ffffff"/><rect x="398" y="86" width="4" height="4" fill="#ffffff"/><rect x="398" y="110" width="4" height="4" fill="#ffffff"/><rect x="398" y="398" width="4" height="4" fill="#ffffff"/><rect x="398" y="422" width="4" height="4" fill="#ffffff"/><rect x="422" y="110" width="4" height="4" fill="#ffffff"/><rect x="422" y="134" width="4" height="4" fill="#ffffff"/><rect x="422" y="158" width="4" height="4" fill="#ffffff"/><rect x="422" y="350" width="4" height="4" fill="#ffffff"/><rect x="422" y="374" width="4" height="4" fill="#ffffff"/><rect x="422" y="398" width="4" height="4" fill="#ffffff"/><rect x="446" y="134" width="4" height="4" fill="#ffffff"/><rect x="446" y="158" width="4" height="4" fill="#ffffff"/><rect x="446" y="182" width="4" height="4" fill="#ffffff"/><rect x="446" y="206" width="4" height="4" fill="#ffffff"/><rect x="446" y="230" width="4" height="4" fill="#ffffff"/><rect x="446" y="254" width="4" height="4" fill="#ffffff"/><rect x="446" y="278" width="4" height="4" fill="#ffffff"/><rect x="446" y="302" width="4" height="4" fill="#ffffff"/><rect x="446" y="326" width="4" height="4" fill="#ffffff"/><rect x="446" y="350" width="4" height="4" fill="#ffffff"/><rect x="446" y="374" width="4" height="4" fill="#ffffff"/><rect x="470" y="182" width="4" height="4" fill="#ffffff"/><rect x="470" y="206" width="4" height="4" fill="#ffffff"/><rect x="470" y="230" width="4" height="4" fill="#ffffff"/><rect x="470" y="254" width="4" height="4" fill="#ffffff"/><rect x="470" y="278" width="4" height="4" fill="#ffffff"/><rect x="470" y="302" width="4" height="4" fill="#ffffff"/><rect x="470" y="326" width="4" height="4" fill="#ffffff"/>
+  <circle cx="256" cy="256" r="170" fill="none" stroke="#f2f2f2" stroke-width="12"/>
+  <circle cx="256" cy="256" r="118" fill="#e31c21"/>
+  <g fill="#000000">
+    <rect x="198" y="245" width="116" height="22" rx="4"/>
+    <rect x="178" y="218" width="24" height="76" rx="6"/>
+    <rect x="310" y="218" width="24" height="76" rx="6"/>
+    <rect x="152" y="202" width="22" height="108" rx="6"/>
+    <rect x="338" y="202" width="22" height="108" rx="6"/>
   </g>
 </svg>

@@ -1,7 +1,9 @@
 // Generado en el build. No editar.
-const VERSION = "9f2832dc5de9";
+const VERSION = "068534be4f36";
 const CACHE = "salud-" + VERSION;
-const FILES = ["./","./assets/index-Bsp__B0H.js","./assets/index-D-tZL937.css","./manifest.webmanifest","./icons/icon-180.png","./icons/icon-192.png","./icons/icon-512.png","./icons/icon-maskable-512.png"];
+const FILES = ["./","./assets/index-BRNxnzqt.js","./assets/index-D-tZL937.css","./manifest.webmanifest","./icons/icon-180.png","./icons/icon-192.png","./icons/icon-512.png","./icons/icon-maskable-512.png"];
+// Las fotos de los ejercicios van en su propia caché, que no se borra al actualizar: cada una se baja una sola vez.
+const PHOTOS = "ejercicios-salud";
 
 self.addEventListener("install", (event) => {
   // cache: "reload" evita la caché HTTP: si no, podría guardarse un index.html anterior que apunta
@@ -37,6 +39,20 @@ self.addEventListener("fetch", (event) => {
       fetch(index, { cache: "no-store" })
         .then((response) => (response.ok ? response : caches.match(index).then((cached) => cached || response)))
         .catch(() => caches.match(index).then((cached) => cached || Response.error()))
+    );
+    return;
+  }
+  if (url.pathname.includes("/assets/") && /[.](gif|webp|png|jpe?g)$/.test(url.pathname)) {
+    event.respondWith(
+      caches.open(PHOTOS).then((cache) =>
+        cache.match(request).then((cached) =>
+          cached ||
+          fetch(request).then((response) => {
+            if (response.ok) cache.put(request, response.clone());
+            return response;
+          })
+        )
+      )
     );
     return;
   }

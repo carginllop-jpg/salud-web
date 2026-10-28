@@ -1,7 +1,7 @@
 // Generado en el build. No editar.
-const VERSION = "068534be4f36";
+const VERSION = "7ae462a54509";
 const CACHE = "salud-" + VERSION;
-const FILES = ["./","./assets/index-BRNxnzqt.js","./assets/index-D-tZL937.css","./manifest.webmanifest","./icons/icon-180.png","./icons/icon-192.png","./icons/icon-512.png","./icons/icon-maskable-512.png"];
+const FILES = ["./","./assets/index-Clr4x1KR.css","./assets/index-GyIjUOCf.js","./manifest.webmanifest","./icons/icon-180.png","./icons/icon-192.png","./icons/icon-512.png","./icons/icon-maskable-512.png"];
 // Las fotos de los ejercicios van en su propia caché, que no se borra al actualizar: cada una se baja una sola vez.
 const PHOTOS = "ejercicios-salud";
 

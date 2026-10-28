@@ -14,11 +14,37 @@
     <link rel="apple-touch-icon" href="./icons/icon-180.png" />
     <link rel="manifest" href="./manifest.webmanifest" />
     <title>Salud</title>
-    <script type="module" crossorigin src="./assets/index-7Sh99Osx.js"></script>
+    <script type="module" crossorigin src="./assets/index-YB7t4NQK.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-_aLhPwWp.css">
   </head>
   <body>
     <div id="app"></div>
     <noscript>Esta app necesita JavaScript.</noscript>
+    <script>
+      // Red de seguridad: si la app no arranca (p. ej. una actualización a medias), ofrece repararla.
+      // Solo borra la caché de la app y el service worker; los datos (IndexedDB) no se tocan.
+      setTimeout(function () {
+        var root = document.getElementById("app");
+        if (!root || root.childElementCount > 0) return;
+        root.innerHTML =
+          '<div class="fatal" style="padding:48px 20px;font-family:-apple-system,sans-serif;color:#888">' +
+          "<strong>La app no ha arrancado</strong><p>Tus datos están a salvo. Pulsa para reparar.</p>" +
+          '<button id="repair" style="margin-top:12px;padding:14px 20px;font-size:17px;border-radius:12px;border:0;background:#e21b23;color:#fff">Reparar</button></div>';
+        document.getElementById("repair").onclick = function () {
+          var jobs = [];
+          if ("serviceWorker" in navigator) {
+            jobs.push(navigator.serviceWorker.getRegistrations().then(function (list) {
+              return Promise.all(list.map(function (r) { return r.unregister(); }));
+            }));
+          }
+          if (window.caches) {
+            jobs.push(caches.keys().then(function (keys) {
+              return Promise.all(keys.map(function (k) { return caches.delete(k); }));
+            }));
+          }
+          Promise.all(jobs).finally(function () { location.reload(); });
+        };
+      }, 6000);
+    </script>
   </body>
 </html>
